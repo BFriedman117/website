@@ -1,12 +1,10 @@
 <template>
   <div>
-    <Header>
-      
-    </Header>
+    <Header />
   </div>
 </template>
 <script>
-import Header from './Header'
+import Header from './Header/Header'
 
 export default {
   components: {
