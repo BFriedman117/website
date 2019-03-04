@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "Website",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "BFriedman117 <binyaminf@yahoo.com>",
@@ -23,6 +23,7 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.42.0",
     "vue": "^2.5.2",
+    "vue-multiselect": "^2.1.4",
     "vue-router": "^3.0.1",
     "vue2-editor": "^2.6.6",
     "vuex": "^3.1.0"

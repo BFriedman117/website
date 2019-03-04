@@ -32,6 +32,11 @@ const store = new Vuex.Store({
         context.commit('setTags', tags)
         context.commit('setLoaded', 'tags')
       })
+    },
+    addPost (context, post) {
+      return api.addPost(post).then(res => {
+        console.log('? ', res)
+      })
     }
   }
 })

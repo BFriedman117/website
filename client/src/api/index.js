@@ -6,6 +6,11 @@ const getTags = () => {
   return axios.get(`${base}/tags`).then(res => res.data)
 }
 
+const addPost = (post) => {
+  return axios.post(`${base}/posts`, post).then(res => res.data)
+}
+
 export default {
-  getTags
+  getTags,
+  addPost
 }

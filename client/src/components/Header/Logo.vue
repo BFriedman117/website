@@ -1,4 +1,4 @@
-<template>  
+<template>
   <svg width="461px" height="65px" viewBox="0 0 461 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
       <desc>Created with Sketch.</desc>
