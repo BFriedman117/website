@@ -63,6 +63,17 @@ export default {
     }
   },
   methods: {
+    clearContent () {
+      let initialState = {
+        headline: '',
+        subheader: '',
+        body: '',
+        contentTag: null
+      }
+      for (let k in initialState) {
+        this[k] = initialState[k]
+      }
+    },
     savePost () {
       let post = {
         post: {
@@ -72,7 +83,9 @@ export default {
         },
         contentTag: this.contentTag
       }
-      this.$store.dispatch('addPost', post)
+      this.$store.dispatch('addPost', post).then(res => {
+        this.clearContent()
+      })
     }
   },
   computed: {

@@ -2,8 +2,12 @@ import axios from 'axios'
 
 const base = 'http://localhost:3000'
 
-const getTags = () => {
+const fetchTags = () => {
   return axios.get(`${base}/tags`).then(res => res.data)
+}
+
+const fetchPosts = () => {
+  return axios.get(`${base}/posts`).then(res => res.data)
 }
 
 const addPost = (post) => {
@@ -11,6 +15,7 @@ const addPost = (post) => {
 }
 
 export default {
-  getTags,
-  addPost
+  fetchTags,
+  addPost,
+  fetchPosts
 }

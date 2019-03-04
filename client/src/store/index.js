@@ -4,21 +4,29 @@ import api from '../api'
 
 Vue.use(Vuex)
 
+const loadIndicators = {
+  POSTS: 'posts',
+  TAGS: 'tags'
+}
+
 const store = new Vuex.Store({
   state: {
     tags: [],
+    posts: [],
     loaded: {
-      tags: false
+      tags: false,
+      posts: false
     }
   },
   mutations: {
     setTags (state, tags) {
       state.tags = tags
     },
+    setPosts (state, posts) {
+      state.posts = posts
+    },
     setLoaded (state, field) {
-      if (state.loaded[field]) {
-        state.loaded[field] = true
-      }
+      state.loaded[field] = true
     }
   },
   getters: {
@@ -28,15 +36,19 @@ const store = new Vuex.Store({
   },
   actions: {
     fetchTags (context) {
-      return api.getTags().then(tags => {
+      return api.fetchTags().then(tags => {
         context.commit('setTags', tags)
-        context.commit('setLoaded', 'tags')
+        context.commit('setLoaded', loadIndicators.TAGS)
+      })
+    },
+    fetchPosts (context) {
+      return api.fetchPosts().then(posts => {
+        context.commit('setPosts', posts)
+        context.commit('setLoaded', loadIndicators.POSTS)
       })
     },
     addPost (context, post) {
-      return api.addPost(post).then(res => {
-        console.log('? ', res)
-      })
+      return api.addPost(post).then(res => res)
     }
   }
 })

@@ -33,7 +33,6 @@ export default {
     display: flex;
     flex-direction: row;
     padding: 15px 30px;
-    position: absolute;
   }
 
   .nav {
