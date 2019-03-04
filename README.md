@@ -1,1 +1,1 @@
-This will be a great, great website. It will be the greatest and biggest website, possibly in the whole history of Online. I know tech, and I know websites - perhaps more than anyone and we will do very well with the web - gonna do a lot of big things with the web.
+This will be a great, great website. It will be the greatest and biggest website, possibly in the whole history of Online. I know tech, and I know websites - perhaps more than anyone and we will do very well with the web - gonna do a lot of big things with the web. 
