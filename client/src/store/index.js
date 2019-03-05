@@ -32,6 +32,15 @@ const store = new Vuex.Store({
   getters: {
     getTags (state) {
       return state.tags
+    },
+    getPosts (state) {
+      return state.posts
+    },
+    tagsLoaded (state) {
+      return state.loaded.tags
+    },
+    postsLoaded (state) {
+      return state.loaded.posts
     }
   },
   actions: {
