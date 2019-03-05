@@ -1,11 +1,11 @@
 <template>
   <div class="post-container">
     <div class="post-header">
-      <h1 class="post-header-text">{{ post ? post.headline : 'Hang On' }}</h1>
-      <h3 class="post-header-text">{{ post ? post.subheader : 'Hang On' }}</h3>
+      <h1 class="post-header header">Testing How Long a Headline Can Get Before It Starts To Cause Problems With The Styling</h1>
+      <h3 class="post-header subheader">{{ post ? post.subheader : 'Hang On' }}</h3>
     </div>
     <div class="post">
-      <p v-html="post.body"></p>
+      <article class="post-body"  v-html="post.body"></article>
     </div>
   </div>
 </template>
@@ -26,8 +26,12 @@ export default {
 }
 </script>
 <style scoped>
-p {
+.post-body {
   text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1020px;
+  padding: 5px;
 }
 .post-container {
   padding: 30px 200px;
@@ -38,8 +42,18 @@ p {
   align-items: flex-start;
 }
 
-.post-header-text {
+.post-header  {
   margin: 5px;
+  padding: 0px;
+  text-align: left;
+}
+
+.header {
+  font-size: 3.75rem;
+}
+
+.subheader {
+  font-size: 1.75rem;
 }
 
 .align-text-left {
