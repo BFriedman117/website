@@ -18,7 +18,7 @@ app.get('*', (req, res) => res.status(200).send({
 }))
 
 if (db && db.sync) {
-  db.sync({ force: false })
+  db.sync({ alter: false })
   .then(() => {
     app.listen(process.env.PORT || 3000)
     console.log('Listening on port: ', process.env.PORT || 3000)

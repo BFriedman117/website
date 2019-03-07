@@ -48,6 +48,7 @@
 import { VueEditor } from 'vue2-editor'
 import { Multiselect } from 'vue-Multiselect'
 import { mapGetters } from 'vuex'
+import utilities from '@/utilities'
 
 export default {
   components: {
@@ -77,7 +78,7 @@ export default {
     savePost () {
       let post = {
         post: {
-          headline: this.headline,
+          headline: utilities.titleCase(this.headline),
           subheader: this.subheader,
           body: this.body
         },

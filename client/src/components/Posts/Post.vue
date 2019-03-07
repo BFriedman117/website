@@ -1,7 +1,7 @@
 <template>
   <div class="post-container">
     <div class="post-header">
-      <h1 class="post-header header">Testing How Long a Headline Can Get Before It Starts To Cause Problems With The Styling</h1>
+      <h1 class="post-header header">{{ post ? titleCase(post.headline) : 'Hang On' }}</h1>
       <h3 class="post-header subheader">{{ post ? post.subheader : 'Hang On' }}</h3>
     </div>
     <div class="post">
@@ -11,10 +11,16 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
+import utilities from '@/utilities'
 export default {
   data () {
     return {
       post: {}
+    }
+  },
+  methods: {
+    titleCase (str) {
+      return utilities.titleCase(str)
     }
   },
   computed: {

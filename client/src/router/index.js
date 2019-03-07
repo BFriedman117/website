@@ -13,6 +13,11 @@ export default new Router({
       component: Home
     },
     {
+      path: '/:tagType',
+      name: 'Section',
+      component: Home
+    },
+    {
       path: '/top-secret-admin-page',
       name: 'Admin',
       component: Admin

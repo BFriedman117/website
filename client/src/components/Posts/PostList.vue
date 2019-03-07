@@ -1,8 +1,10 @@
 <template>
-  <div class="post">
-    <Post v-if="postsLoaded"></Post>
+  <div>
+    <div class="post-list" v-if="postsLoaded">
+      <PostCard v-for="(post, index) in getPosts" :post="post" :key="index"></PostCard>
+    </div>
     <div v-else>
-      Hang On
+      <h1>Hold Up</h1>
     </div>
   </div>
 </template>
@@ -12,12 +14,13 @@ import Post from './Post'
 import { mapGetters } from 'vuex'
 
 export default {
+  props: ['posts'],
   components: {
     PostCard,
     Post
   },
   computed: {
-    ...mapGetters(['postsLoaded'])
+    ...mapGetters(['postsLoaded', 'getPosts'])
   }
 }
 </script>

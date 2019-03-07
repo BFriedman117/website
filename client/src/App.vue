@@ -8,8 +8,11 @@
 export default {
   name: 'App',
   created () {
-    this.$store.dispatch('fetchTags')
-    this.$store.dispatch('fetchPosts')
+    // this.$store.dispatch('fetchTags')
+    // this.$store.dispatch('fetchPosts')
+    // this.$store.dispatch('fetchPostTags')
+    // this.$store.dispatch('organizePosts')
+    this.$store.dispatch('loadInitialData')
   }
 }
 </script>

@@ -1,15 +1,17 @@
 <template>
   <div class="header">
-    <Logo/>
+    <router-link to="home">
+      <Logo />
+    </router-link>
     <div class="nav-container">
       <div class="nav">
         <div v-for="(tag, index) in getTags" :key="index" class="nav-item">
-          <a>{{ tag.type.toUpperCase() }}</a>
+          <router-link :to="tag.type.toLowerCase()" class="nav-text">{{ tag.type.toUpperCase() }}</router-link>
         </div>
       </div>
     </div>
     <div class="header-end-container">
-      <HeaderEnd/>
+      <HeaderEnd />
     </div>
   </div>
 </template>
@@ -49,8 +51,14 @@ export default {
     border-bottom: 4px solid black;
   }
 
+  .nav-text {
+    text-decoration: none;
+    color: black;
+  }
+
   .nav-item:hover {
     border-bottom: none;
+    cursor: pointer;
     border-top: 4px solid black;
     border-left: 4px solid black;
     border-right: 4px solid black;

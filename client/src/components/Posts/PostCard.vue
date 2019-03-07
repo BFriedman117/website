@@ -4,16 +4,26 @@
       An image?
     </div>
     <div class="postcard-title">
-      <h1 class="postcard-header">Probably The Headline</h1>
-      <h3 class="postcard-header">The sub-header I suppose</h3>
-      <h4 class="postcard-header">By So and So</h4>
-      <h5 class="postcard-header">1/2/13</h5>
+      <h1 class="postcard-header">{{ post.headline }}</h1>
+      <h3 class="postcard-header">{{ post.subheader }}</h3>
+      <h4 class="postcard-header">By Staff</h4>
+      <h5 class="postcard-header">{{ postDate }}</h5>
     </div>
     <div class="post-text">
 
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: ['post'],
+  computed: {
+    postDate () {
+      return this.post.createdAt.slice(0, this.post.createdAt.indexOf('T'))
+    }
+  }
+}
+</script>
 <style>
 .postcard-container {
   margin: 15px 40px;
