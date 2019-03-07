@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="post-list" v-if="postsLoaded">
-      <PostCard v-for="(post, index) in getPosts" :post="post" :key="index"></PostCard>
+      <PostCard v-for="(post, index) in posts" :post="post" :key="index"></PostCard>
     </div>
     <div v-else>
       <h1>Hold Up</h1>

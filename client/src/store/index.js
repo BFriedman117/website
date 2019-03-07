@@ -47,6 +47,13 @@ const store = new Vuex.Store({
       })
       return tags
     },
+    getTagTypes (state) {
+      let tags = {}
+      state.tags.forEach(tag => {
+        tags[tag.type.toLowerCase()] = tag.id
+      })
+      return tags
+    },
     getPosts (state) {
       // Map an array to an object where we can use the key for faster reference
       let posts = {}
@@ -54,6 +61,12 @@ const store = new Vuex.Store({
         posts[post.id] = post
       })
       return posts
+    },
+    getPostsByTag: (state, getters) => (tagId) => {
+      if (!state.organizedPosts[tagId]) return []
+      return state.organizedPosts[tagId].map(postId => {
+        return getters.getPosts[postId]
+      })
     },
     getPostTags (state) {
       // Lets make this a little easier to cross reference by object-ifying the data

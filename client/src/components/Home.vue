@@ -20,10 +20,19 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getPostTags', 'getPosts', 'getTags']),
+    ...mapGetters(['getPostTags', 'getPosts', 'getTags', 'getTagTypes', 'getPostsByTag']),
     computedPosts () {
-      // Yeah the filtering should probably only happen once on the back end when posts are loaded
-      return this.getPosts
+      let route = this.$route.params.tagType
+      if (route) {
+        let tagType = this.getTagTypes[route]
+        if (tagType) {
+          return this.getPostsByTag(this.getTagTypes[route])
+        } else {
+          return this.getPosts
+        }
+      } else {
+        return this.getPosts
+      }
     }
   }
 }

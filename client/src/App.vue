@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view v-if="initialDataLoaded"/>
+    <div v-else>
+      <h1>Loading.</h1>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
+  data () {
+    return {
+      initialDataLoaded: false
+    }
+  },
   created () {
-    // this.$store.dispatch('fetchTags')
-    // this.$store.dispatch('fetchPosts')
-    // this.$store.dispatch('fetchPostTags')
-    // this.$store.dispatch('organizePosts')
-    this.$store.dispatch('loadInitialData')
+    this.$store.dispatch('loadInitialData').then(() => {
+      this.initialDataLoaded = true
+    })
   }
 }
 </script>
